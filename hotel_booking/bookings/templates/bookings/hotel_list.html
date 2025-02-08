@@ -1,7 +1,7 @@
 {% extends 'bookings/base.html' %}
 
 {% block content %}
-<h1 class="mb-4">Find Your Perfect Hotel</h1>
+<h1 class="mb-4 text-center">Find Your Perfect Hotel</h1>
 
 <form method="get" class="mb-4">
     <div class="row g-3">
@@ -25,7 +25,7 @@
 </form>
 
 {% for hotel in hotels %}
-<div class="card mb-4">
+<div class="card mb-4 card-3d">
     <div class="card-header bg-primary text-white">
         <h2>{{ hotel.name }}</h2>
         <p class="mb-0">{{ hotel.location }}</p>
@@ -35,7 +35,7 @@
         <div class="row row-cols-1 row-cols-md-3 g-4">
             {% for room in hotel.available_rooms %}
             <div class="col">
-                <div class="card h-100 shadow">
+                <div class="card h-100 shadow card-3d">
                     <div class="card-body">
                         <h5 class="card-title">Room {{ room.room_number }}</h5>
                         <div class="d-grid gap-2">
