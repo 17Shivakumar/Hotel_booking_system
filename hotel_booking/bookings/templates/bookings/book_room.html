@@ -1,0 +1,23 @@
+{% extends 'bookings/base.html' %}
+
+{% block content %}
+<div class="card shadow">
+    <div class="card-header bg-info text-white">
+        <h2>Book Room {{ room.room_number }}</h2>
+        <h4>{{ room.hotel.name }}</h4>
+    </div>
+    <div class="card-body">
+        <form method="post">
+            {% csrf_token %}
+            <div class="mb-3">
+                {{ form.as_p }}
+            </div>
+            <div class="d-grid gap-2">
+                <button type="submit" class="btn btn-primary btn-lg">
+                    Confirm Booking
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

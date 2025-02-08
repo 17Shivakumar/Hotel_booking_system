@@ -1,0 +1,34 @@
+{% extends 'bookings/base.html' %}
+
+{% block content %}
+<div class="card shadow">
+    <div class="card-header bg-success text-white">
+        <h2>Booking Confirmed!</h2>
+    </div>
+    <div class="card-body">
+        <h3>Thank you, {{ booking.customer_name }}!</h3>
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <h5>Hotel Details</h5>
+                <p class="lead">
+                    {{ booking.hotel.name }}<br>
+                    {{ booking.hotel.location }}
+                </p>
+            </div>
+            <div class="col-md-6">
+                <h5>Booking Details</h5>
+                <p>
+                    Room: {{ booking.room.room_number }}<br>
+                    Check-in: {{ booking.check_in }}<br>
+                    Check-out: {{ booking.check_out }}
+                </p>
+            </div>
+        </div>
+        <div class="mt-4">
+            <a href="{% url 'hotel_list' %}" class="btn btn-primary btn-lg">
+                Book Another Room
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}
